@@ -17,9 +17,16 @@
 \usepackage{color}
 \usepackage{cancel}
 \usepackage{setspace}
+\usepackage{physics}
+\usepackage{enumitem}
+\usepackage{graphicx}
 
-
-
+	% use for derivatives:
+%	\dv{Q}{t} = \dv{s}{t}  \quad
+%	\dv[n]{Q}{t} = \dv[n]{s}{t}  \quad
+%	\pdv{Q}{t} = \pdv{s}{t}  \quad
+%	\pdv[n]{Q}{t} = \pdv[n]{s}{t}  \quad
+%	\pdv{Q}{x}{t} = \pdv{s}{x}{t}  \quad
 
 %\doublespacing
 % or:
@@ -44,7 +51,8 @@
 \newcommand{\fracds}[2]{\frac{\displaystyle #1\rrule{-0.2em}}{\displaystyle #2\rrule{1em}}}
 \newcommand{\figref}[1]{Fig.~\ref{#1}}
 \newcommand{\ubar}[1]{\underaccent{\bar}{#1}}
-\newcommand{\norm}[1]{\lvert \lvert \vec #1 \rvert \rvert}
+%	\newcommand{\norm}[1]{\lvert \lvert \vec #1 \rvert \rvert}
+
 
 %diffeomorphism
 
@@ -116,30 +124,85 @@ $$X[m,n]  =\sum^P_{x=1}\phi[m,n]*\delta(m-m_i,n-n_i) = \sum^P_{x=1}\phi[m,n]*(\d
 \begin{hebrew}
 \textit{\huge שאלה 2.}
 
-א. נמצא את הסינון הלינארי:
+א. נמצא את הסינון הלינארי. נתבונן רק בפילטר של השחזור, ונמצא פילטר בודד:
 \end{hebrew}
 \begin{equation*}
-\psi = \alpha(1+k\nabla^2) = \alpha\left(\begin{bmatrix}0&0&0\\0&1&0\\0&0&0\end{bmatrix}+K\begin{bmatrix}0&1&0\\1&-4&1\\0&1&0\end{bmatrix}\right) = \begin{bmatrix}0&K&0\\K&\alpha-4K&K\\0&K&0\end{bmatrix}
+\alpha(1+k\nabla^2) = \alpha\left(\begin{bmatrix}0&0&0\\0&1&0\\0&0&0\end{bmatrix}+K\begin{bmatrix}0&1&0\\1&-4&1\\0&1&0\end{bmatrix}\right) = \begin{bmatrix}0&K&0\\K&\alpha-4K&K\\0&K&0\end{bmatrix}
 \end{equation*}
-
+\begin{hebrew}
+כעת, על מנת לקבל סינון לינארי שעוברת התמונה, נשתמש גם במודל טשטוש שהוצע. נבצע קונבולוציה:
+\end{hebrew}
+\begin{equation*}
+\psi = \frac{1}{8}\cdot \begin{bmatrix}0&K&0\\K&\alpha-4K&K\\0&K&0\end{bmatrix} * \begin{bmatrix}0&1&0\\1&4&1\\0&1&0\end{bmatrix}  = \frac{1}{8} \cdot \begin{bmatrix}0&0&K&0&0\\0&2K&\alpha&2K&0\\K&\alpha&4\alpha-12K&\alpha&K\\0&2K&\alpha&2K&0\\0&0&K&0&0\end{bmatrix}
+\end{equation*}
 
 \begin{hebrew}
 ב. נמצא את $\alpha$ שישמור על הממוצע של התמונה המקורית. לטובת זאת, נשווה את הממוצע של הפילטר ל-1:
 \end{hebrew}
 
 \begin{equation*}
-mean = 4\cdot K + \alpha - 4K = 1  \Longrightarrow  \alpha = 1
+mean = \frac{1}{8} \cdot (12\cdot K + 8\cdot\alpha - 12K) = 1  \Longrightarrow  \alpha = \frac{8}{8} = 1
 \end{equation*}
 
 \begin{hebrew}
-ג. כעת נתון ש-$\alpha$ הינו 1. כמו כן, מצאנו שגרעין $\psi$ הינו $3X3$, כלומר $M=N=3$. נמצא את K אשר ימזער את השגיאה הריבועית המוגדרת:
+ג. כעת נתון ש-$\alpha$ הינו 1. כמו כן, מצאנו שגרעין $\psi$ הינו $5X5$, כלומר $M=N=5$ נמצא את K אשר ימזער את השגיאה הריבועית המוגדרת:
 \end{hebrew}
 \begin{equation*}
 E = \sum_{m=1}^M \sum_{m=1}^M |\psi -\delta|^2
 \end{equation*}
+\begin{equation*}
+\psi -\delta  = \begin{bmatrix}0&0&K&0&0\\0&2K&1&2K&0\\K&1&3-12K&1&K\\0&2K&1&2K&0\\0&0&K&0&0\end{bmatrix}
+\end{equation*}
+\begin{equation*}
+E = |\psi -\delta|^2 = 4\cdot K^2 + 4\cdot (2K)^2 + 4 + (3-12K)^2
+\end{equation*}
+\begin{hebrew}
+נמצא את המינימום, נגזור, נשווה ל-0
+\end{hebrew}
+\begin{equation*}
+\frac{\partial E}{\partial K} = \frac{\partial{|\psi -\delta|^2}}{\partial K} = 8K + 16K + 2(3-12K) = 24K -24K + 6 = 0
+\end{equation*}
+\begin{equation*}
+\Longrightarrow 6 = 0 (???)
+\end{equation*}
 
 
+\newpage
 
+\begin{hebrew}
+\textit{\huge שאלה 2.}
+
+א. נמצא אלמנט בנייה עבור כל אחת מהתמונות $a-d$:
+\end{hebrew}
+
+For each case, we put the element onto the original figure to indicate the proportion
+
+\begin{enumerate}[label=(\alph*.)]
+
+\item The operation is \textbf{erosion}, the structuring element is the following, where C indicates the center
+\newline
+\newline
+\includegraphics{imgs/q3_11.png}
+\item The operation is \textbf{erosion}, the structuring element is the following, where C indicates the center
+\newline
+\newline
+\includegraphics{imgs/q3_12.png}
+\item The operation is \textbf{erosion}, the structuring element is the following, where the dot indicates the center. Notice that the upper and lower parts in the structuring element were added so that the "connecting" part in the "U" shape will have overlap with some of surrounding black part, thus resulting in '0'.
+\newline
+\newline
+\includegraphics{imgs/q3_13.png}
+\item The operation is \textbf{dilation}, the structuring element is the following, where the dot indicates the center.
+\newline
+\newline
+\includegraphics{imgs/q3_14.png}
+
+
+\end{enumerate}
+
+
+\begin{hebrew}
+ב. התשובות הן להלן:
+\end{hebrew}
 
 
 
