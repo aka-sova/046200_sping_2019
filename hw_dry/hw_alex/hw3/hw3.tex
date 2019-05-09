@@ -19,7 +19,8 @@
 \usepackage{setspace}
 \usepackage{physics}
 \usepackage{enumitem}
-\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{amsmath}
 
 	% use for derivatives:
 %	\dv{Q}{t} = \dv{s}{t}  \quad
@@ -170,7 +171,7 @@ E = |\psi -\delta|^2 = 4\cdot K^2 + 4\cdot (2K)^2 + 4 + (3-12K)^2
 \newpage
 
 \begin{hebrew}
-\textit{\huge שאלה 2.}
+\textit{\huge שאלה 4.}
 
 א. נמצא אלמנט בנייה עבור כל אחת מהתמונות $a-d$:
 \end{hebrew}
@@ -201,11 +202,98 @@ For each case, we put the element onto the original figure to indicate the propo
 
 
 \begin{hebrew}
-ב. התשובות הן להלן:
+ב. התשובות מופיעות בסוף המסמך על דפים סרוקים.
 \end{hebrew}
 
 
 
+\newpage
+
+\begin{hebrew}
+\textit{\huge שאלה 5.}
+
+א. כעת המודל יראה באופן הבא:
+\end{hebrew}
+
+\begin{equation*}
+\begin{aligned}
+&\underline{Y} = H\underline{X} + \underline{N} \\ 
+&\underline{X} , \underline{Y}, \underline{N}  \in [M^2 ; 1] \\
+&H \in [M^2 ; M^2]
+\end{aligned}
+\end{equation*}
+
+\begin{hebrew}
+מטריצה $H$ במקורה הייתה צריכה להכיל $1$ בכל איברי האלכסון שלה (מטריצה אלכסונית), ו-$0$ בכל השאר האתאים. אך כוון שחלק מהפיקסלים התאפסו, במקומות האלה יהיו  גם כן$0$. נניח, שפיקסל השני התאפס:
+\end{hebrew}
+\newline
+\begin{equation*}
+\begin{bmatrix}
+1 & 0 & \cdots & 0\\
+0 & 0 & \cdots & 0\\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+\end{equation*}
+\newline
+
+
+\begin{hebrew}
+מטריצה $N$ תכיל את הרעש. במקור זהו רעש גאוסי $W \sim N(0,\sigma_n^2)$, אך כעת במקומות בהן הפיקסל התאפס יהיה שם 0. השורות בהן הפיקסל התאפס מתאימות לשורות של $H$ בהן השורה התאפסה. לגבי הפילוג:
+\begin{itemize}
+\item הממוצע של הפילוג לא ישתנה, כוון שהוא שווה ל-$0$. החלפת חלק מהמספרים ב-$0$ לא ישפיע על הממוצע.
+\item השונות של המטריצה תקטן. נזכר במשוואה עבור שונות:
+\begin{equation*}
+Var(N) = \frac{1}{M^2}\sum_{i=1}^{M^2}{(n_i - \mu)^2} = Var(N) = \frac{1}{M^2}\sum_{i=1}^{M^2}{n_i^2} 
+\end{equation*}
+כעת ידוע כי אחוז מסוים מהאיברים הינו $0$, אך כמות סה"כ של האיברים נשארה זהה. נעשה הנחה לגיטימית - השונות של האיברים שהתאפסו הינה זהה לשונות של כלל האיברים. נניח כי התאפסו $K\%$ מהפיקסלים. לכן, שונות החדשה הינה:
+
+\begin{equation*}
+\begin{aligned}
+&\sigma_n^2 (new) = \sigma_n^2 -  \frac{1}{M^2}\sum_{zeroed-elements}{(n_i)^2} =\\
+&\sigma_n^2 -  \frac{1}{M^2}\frac{K\%\cdot M^2}{1}\frac{1}{K\%\cdot M^2}\sum_{zeroed-elements}{(n_i)^2} =\\
+&\sigma_n^2 - \frac{M^2 \cdot K\%}{M^2}\sigma_n^2 = (1-K\%)\sigma^2_n
+\end{aligned}
+\end{equation*}
+כמובן, שאם למשל $K$ הינו $5\%$,  אנחנו נשתמש בערך של $0.05$
+\end{itemize}
+\end{hebrew}
+
+
+
+\begin{hebrew}
+
+ב. כעת ידוע:
+\end{hebrew}
+
+
+
+\begin{align*}
+K &= 0.05 \\ 
+M &= 100   \Longrightarrow  H \in [100,100]
+\end{align*}
+
+\begin{hebrew}
+
+מהגדרתו של $det$, מכוון שכל האיברים שהם לא על האלכסון הם 0, וגם חלק מערכים שעל האלכסון הם 0, נקבל:
+\end{hebrew}
+
+\begin{equation*}
+det(H) = 0
+\end{equation*}
+
+\begin{hebrew}
+
+מגודל של המטריצה, ומידיעה ש-$5\%$ מתוכם הם 0, ושאר הם 1, נקבל:
+\end{hebrew}
+\begin{equation*}
+tr(H) = 100 - 5 = 95
+\end{equation*}
+
+\begin{hebrew}
+
+ג. נחשב את שגיאת השיערוך
+\end{hebrew}
 
 
 
