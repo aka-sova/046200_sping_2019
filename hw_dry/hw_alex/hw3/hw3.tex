@@ -168,6 +168,43 @@ E = |\psi -\delta|^2 = 4\cdot K^2 + 4\cdot (2K)^2 + 4 + (3-12K)^2
 \end{equation*}
 
 
+
+\newpage
+\begin{hebrew}
+\textit{\huge שאלה 2.}
+
+א. נמצא את הסינון הלינארי. נתבונן רק בפילטר של השחזור, ונמצא פילטר בודד:
+\end{hebrew}
+
+\newcommand{\NAcs}{\underline{N_a^{cs}}}
+\newcommand{\Nrcs}{\underline{N_1^{cs}}}
+\newcommand{\Nics}{\underline{N_2^{cs}}}
+
+
+\subsection{a}
+The expressions for $H_a$ and $\underline{N_a^{cs}}$ are the following:
+
+\begin{align*}
+H_\alpha &= 0 \\
+\NAcs &= \Nrcs + i\Nics
+\end{align*}
+
+Finding the mean vector:
+
+\begin{align*}
+\mu_{N_{\alpha}} = [\mu_{\Nrcs}  \mu_{\Nics} ] = [ 0 ; 0 ] 
+\end{align*}
+
+Since $\underline{N_a^{cs}}$ is column vector of a complex-valued random variables, the covariance matrix is the expectation of its product with its conjugate transpose:
+
+
+\begin{align*}
+\Gamma_{N_{\alpha}} &= Cov[\NAcs ,\NAcs] = E[(\NAcs - \mu_{\NAcs})(\NAcs - \mu_{\NAcs})^H] = E[(\NAcs)(\NAcs)^H] \\ 
+&= E[(\Nrcs + i\Nics)(\Nrcs + i\Nics)^H]  =  E[(\Nrcs + i\Nics)(\Nrcs^{T} - i\Nics^{T})]   \\ 
+&= E[(\Nrcs\Nrcs^{T}) +(\Nics\Nics^{T})]= 2\cdot\sigma^{2}I
+\end{align*}
+
+
 \newpage
 
 \begin{hebrew}
