@@ -21,6 +21,7 @@
 \usepackage{enumitem}
 \usepackage{mathtools}
 \usepackage{amsmath}
+\usepackage{pdfpages}
 
 	% use for derivatives:
 %	\dv{Q}{t} = \dv{s}{t}  \quad
@@ -152,26 +153,24 @@ mean = \frac{1}{8} \cdot (12\cdot K + 8\cdot\alpha - 12K) = 1  \Longrightarrow  
 E = \sum_{m=1}^M \sum_{m=1}^M |\psi -\delta|^2
 \end{equation*}
 \begin{equation*}
-\psi -\delta  = \begin{bmatrix}0&0&K&0&0\\0&2K&1&2K&0\\K&1&3-12K&1&K\\0&2K&1&2K&0\\0&0&K&0&0\end{bmatrix}
+\psi -\delta  = \frac{1}{8} \cdot \begin{bmatrix}0&0&K&0&0\\0&2K&1&2K&0\\K&1&-4-12K&1&K\\0&2K&1&2K&0\\0&0&K&0&0\end{bmatrix}
 \end{equation*}
-\begin{equation*}
-E = |\psi -\delta|^2 = 4\cdot K^2 + 4\cdot (2K)^2 + 4 + (3-12K)^2
-\end{equation*}
+\begin{align*}
+E =& |\psi -\delta|^2 =  \frac{1}{8} \cdot ( 4\cdot K^2 + 4\cdot (2K)^2 + 4 + (-4-12K)^2 ) = \\
+=& \frac{1}{8} \cdot ( 164K^2 + 96K + 20 )
+\end{align*}
 \begin{hebrew}
 נמצא את המינימום, נגזור, נשווה ל-0
 \end{hebrew}
-\begin{equation*}
-\frac{\partial E}{\partial K} = \frac{\partial{|\psi -\delta|^2}}{\partial K} = 8K + 16K + 2(3-12K) = 24K -24K + 6 = 0
-\end{equation*}
-\begin{equation*}
-\Longrightarrow 6 = 0 (???)
-\end{equation*}
+\begin{align*}
+\frac{\partial E}{\partial K} = \frac{\partial{|\psi -\delta|^2}}{\partial K} =  328K + 96 = 0 \Longrightarrow K = -\frac{96}{328} = -0.292 \approx -0.3
+\end{align*}
 
 
 
 \newpage
 \begin{hebrew}
-\textit{\huge שאלה 2.}
+\textit{\huge שאלה 3.}
 
 א. נמצא את הסינון הלינארי. נתבונן רק בפילטר של השחזור, ונמצא פילטר בודד:
 \end{hebrew}
@@ -185,7 +184,7 @@ E = |\psi -\delta|^2 = 4\cdot K^2 + 4\cdot (2K)^2 + 4 + (3-12K)^2
 The expressions for $H_a$ and $\underline{N_a^{cs}}$ are the following:
 
 \begin{align*}
-H_\alpha &= 0 \\
+H_\alpha &= O \\
 \NAcs &= \Nrcs + i\Nics
 \end{align*}
 
@@ -205,6 +204,95 @@ Since $\underline{N_a^{cs}}$ is column vector of a complex-valued random variabl
 \end{align*}
 
 
+\begin{hebrew}
+
+ב. נרשום את הביטויים הנדרשים:
+\end{hebrew}
+
+\newcommand{\NBcs}{\underline{N_b^{cs}}}
+\newcommand{\YBcs}{\underline{Y_b^{cs}}}
+
+\begin{align*}
+H_\beta &= O \\
+\NBcs &= O(\Nrcs + i\Nics)
+\end{align*}
+
+
+\newcommand{\fml}{\hat{f_{ML}}}
+\newcommand{\fcs}{f^{cs}}
+\newcommand{\meanvec}{H_{b}\fcs}
+\newcommand{\Hb}{H_{b}}
+\begin{hebrew}
+ג. נרשום את הי=פילוג של $\YBcs$, ומשם נוכל לחשב את ה-$\fml$
+\end{hebrew}
+\begin{align*}
+\YBcs &\sim N(H_{b}\fcs, 2\sigma^{2}I) \\
+P(\YBcs) &= C_{2}exp\left[-\frac{1}{2}(x-\mu)^{H}2\Gamma^{-1}(x-\mu)\right]
+\end{align*}
+\begin{hebrew}
+נכניס את הנתונים שלנו ונקבל:
+\end{hebrew}
+\begin{align*}
+P(\YBcs|\fcs) &= C_{2}exp\left[-\frac{1}{2}\frac{(\YBcs-\meanvec)^{H}(\YBcs-\meanvec)}{2\sigma^{2}I}\right]
+\end{align*}
+
+\begin{hebrew}
+נקבל את השיערוך ע"י מקסימיזציה של ההסתברות ע"י מציאת $\fcs$ מתאים:
+\end{hebrew}
+\begin{align*}
+\fml =& argmax_{\fcs}\left(P(\YBcs|\fcs)\right) = \\
+=& argmax_{\fcs}\left(C_{2}exp\left[-\frac{1}{2}\frac{(\YBcs-\meanvec)^{H}(\YBcs-\meanvec)}{2\sigma^{2}I}\right]\right) = \\
+=& argmin_{\fcs}\left((\YBcs-\meanvec)^{H}(\YBcs-\meanvec)\right) 
+\end{align*}
+
+\begin{hebrew}
+נגזור לקבלת מינימום:
+\end{hebrew}
+\begin{align*}
+\frac{\delta}{\delta\fcs}\left((\YBcs-\meanvec)^{H}(\YBcs-\meanvec)\right)  &= 0 \\ 
+-\Hb^{H}(\YBcs-\meanvec)-\Hb^{T}(\YBcs-\meanvec)^{*} &= 0 \\ 
+-\Hb^{H}\YBcs+\Hb^{H}\Hb\fcs-\Hb^{T}\YBcs^{*}+\Hb^{T}\Hb^{*}\fcs &= 0 \\
+\left(\Hb^{H}\Hb+\Hb^{T}\Hb^{*}\right)\fcs &= \left(\Hb^{H}\YBcs+\Hb^{T}\YBcs^{*}\right) \\
+\left(\Hb^{H}\Hb+\Hb^{T}\Hb^{*}\right)^{-1}\left(\Hb^{H}\YBcs+\Hb^{T}\YBcs^{*}\right) &= \fcs
+\end{align*}
+\begin{hebrew}
+נזכר בתכונות של מטריצת $DFT$: היא אוניטרית וסימטרית. לכן:
+\end{hebrew}
+\begin{align*}
+H_{b}^{*}H_{b} = H_{b}H_{b}^{*}  &= 1 \\
+H_{b}^{T} &= H_{b}
+\end{align*}
+
+\begin{align*}
+(I+I)^{-1}\left(\Hb^{H}\YBcs+\Hb^{T}\YBcs^{*}\right) &= \fcs \\
+(I+I)^{-1}\left(\Hb^{-1}\YBcs+(\Hb^{-1}\YBcs)^{*}\right) &= \fcs
+\end{align*}
+\begin{hebrew}
+שזוהי בעצם התמרה הפוכה:
+\end{hebrew}
+\begin{align*}
+\fcs &= \frac{1}{2}\left(y_{b}^{cs} + (y_{b}^{cs})^{*}\right) \\ 
+\fcs &= \frac{1}{2}\left(2\cdot real(y_{b}^{cs})\right)= real(y_{b}^{cs}) = y_{b}^{cs}
+\end{align*}
+
+\begin{hebrew}
+קיבלנו שמערך המיטבי הינו התמרה הפוכה של פונקציית $\YBcs$, שזה נראה הגיוני, הרי שהשגיאה הינה סביב 0, כי הרעש מפולג סביב 0. 
+\end{hebrew}
+
+\begin{hebrew}
+ד. כידוע מסימטריה של התמרת פורייה, אם ההתמרה מתבצעת על הפונקציה שהיא סימטרית (זוגית), אז יהיו לה רק ערכים ממשיים. כלומר, $\YBcs$ אמור להכיל רק מספרים ממשיים. לכן לפני ביצוע של ההתמרה ההפוכה אנו נאפס את האיברים המדומים של $\YBcs$ , כי ידוע לנו שהם הגיעו מהרעש. המשערך נשאר זהה, ניתן לרשום אותו פורמלית:
+\end{hebrew}
+\begin{align*}
+\fcs &= F^{-1}\left(Real(\YBcs)\right)
+\end{align*}
+
+
+
+
+% \text{we use the rule: } \frac{\delta}{\delta x}\left((Ax+b)^{H}C(Dx+e)\right) &= (Ax+b)^{H}CD + (Dx+e)^{T}C^{T}A \\ 
+
+
+
 \newpage
 
 \begin{hebrew}
@@ -217,7 +305,7 @@ For each case, we put the element onto the original figure to indicate the propo
 
 \begin{enumerate}[label=(\alph*.)]
 
-\item The operation is \textbf{erosion}, the structuring element is the following, where C indicates the center
+\item The operation is \textbf{erosion}, the structuring element is the following, where dot indicates the center
 \newline
 \newline
 \includegraphics{imgs/q3_11.png}
@@ -225,7 +313,7 @@ For each case, we put the element onto the original figure to indicate the propo
 \newline
 \newline
 \includegraphics{imgs/q3_12.png}
-\item The operation is \textbf{erosion}, the structuring element is the following, where the dot indicates the center. Notice that the upper and lower parts in the structuring element were added so that the "connecting" part in the "U" shape will have overlap with some of surrounding black part, thus resulting in '0'.
+\item First operation is \textbf{erosion} with the first element, which is rectangular, which is higher, than the connecting part of 'U' letter. Second operation is dilation, with the structuring element of a circle.
 \newline
 \newline
 \includegraphics{imgs/q3_13.png}
@@ -297,9 +385,8 @@ Var(N) = \frac{1}{M^2}\sum_{i=1}^{M^2}{(n_i - \mu)^2} = Var(N) = \frac{1}{M^2}\s
 \end{hebrew}
 
 
-
+\newpage
 \begin{hebrew}
-
 ב. כעת ידוע:
 \end{hebrew}
 
@@ -328,16 +415,20 @@ tr(H) = 100 - 5 = 95
 \end{equation*}
 
 \begin{hebrew}
+ג. המשערך נראה כמו משערך רגיל של ML, עם קווריאנס ידוע.  אך כיוון שמטריצה H אינה הפיכה, לא נוכל להשתמש במשערך הנ"ל. כדי לפתור את הבעיה, אנו נוסיף איבר נוסף שימנע מתרחיש הזה לקרות, ותבטיח את קיום של האינוורס של החלק הראשון של המטריצה, ונקבל:
+\end{hebrew}
 
-ג. נחשב את שגיאת השיערוך
+\begin{equation*}
+\underline{\hat{X}}_{ML} = (H^{T}\Lambda^{-1}H + \epsilon I)^{-1}H^{T}\Lambda^{-1}\hat{Y}
+\end{equation*}
+\begin{hebrew}
+נקבל שיערוך פחות טוב, אך ישים.
 \end{hebrew}
 
 
 
 
-
-
-
+\includepdf[pages=-]{q4_2.pdf}
 
 \end{document}
 
