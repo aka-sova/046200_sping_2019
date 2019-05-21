@@ -287,9 +287,33 @@ H_{b}^{T} &= H_{b}
 \end{align*}
 
 
+\begin{hebrew}
+ה. הדרישה הנ"ל אומרת שהשערוך יהיה ככל הניתן קרוב ל-0. כלומר, נורמה השניה של הפונקציה (תמונה). 
+\end{hebrew}
 
+\newcommand{\FCS}{\underline{F^{CS}}}
+\newcommand{\GCS}{\underline{G^{CS}}}
+\newcommand{\GCSH}{\hat{\underline{G^{CS}}}}
+\newcommand{\fcsh}{\hat{\underline{f^{CS}}}}
 
-% \text{we use the rule: } \frac{\delta}{\delta x}\left((Ax+b)^{H}C(Dx+e)\right) &= (Ax+b)^{H}CD + (Dx+e)^{T}C^{T}A \\ 
+\begin{hebrew}
+ו. ניתן לראות שלאחר הכפלה של $\FCS$ במטריצה $S$, נאבד הרבה מידע. כדי לשחזר את $\hat{f}$, עלינו להשלים את האיברים החסרים במטריצה $\GCS$, ולאחר מכן לבצע התמרה הפוכה. נבנה מטריצה "משוחזרת" של $\GCS$, כאשר במקום האיברים החסרים נשים 0:
+\end{hebrew}
+\begin{equation*}
+\text{for all j , i in S[i,j] : }
+\GCSH = 
+\begin{cases}
+0  & S [i,j] = 0 \\
+\GCS(i) & S [i,j] = 1
+\end{cases}
+\end{equation*}
+
+\begin{hebrew}
+כך בעצם גודל של מטריצה $\GCSH$ יהיה 9 על 1, כמו של $\FCS$. מכאן נוכל לשחזר את $\fcsh$ מתוך $\GCSH$:
+\end{hebrew}
+\begin{equation*}
+\fcsh = F^{-1}(\GCSH)
+\end{equation*}
 
 
 
@@ -421,6 +445,7 @@ tr(H) = 100 - 5 = 95
 \begin{equation*}
 \underline{\hat{X}}_{ML} = (H^{T}\Lambda^{-1}H + \epsilon I)^{-1}H^{T}\Lambda^{-1}\hat{Y}
 \end{equation*}
+
 \begin{hebrew}
 נקבל שיערוך פחות טוב, אך ישים.
 \end{hebrew}

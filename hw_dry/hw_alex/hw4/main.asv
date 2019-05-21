@@ -1,0 +1,13 @@
+
+
+coins = imread('coins.png');
+SE = strel('disk',1,4);
+coins_eroded = imerode(coins,SE);
+
+coins_contours = coins - coins_eroded;
+imshow(coins_contours)
+
+
+% find centers
+[centers,radii] = imfindcircles(coins_contours,[2 100]);
+
