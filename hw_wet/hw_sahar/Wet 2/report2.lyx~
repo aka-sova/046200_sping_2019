@@ -1,0 +1,284 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass heb-article
+\use_default_options true
+\maintain_unincluded_children false
+\language hebrew
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+ש.ב רטוב
+\family roman
+\series medium
+\shape up
+\size largest
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series medium
+\shape up
+\size largest
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ענ
+\begin_inset Quotes erd
+\end_inset
+
+ת
+\end_layout
+
+\begin_layout Section*
+
+\numeric on
+1
+\numeric off
+.
+ סינון מרחבי ופעולות מורפולוגיות
+\end_layout
+
+\begin_layout Subsection*
+א.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Q1-2.jpg
+	lyxscale 10
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+ב.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename keyboard.jpg
+	lyxscale 10
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+ג+ד.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Q1-3.jpg
+	lyxscale 10
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ניתן לראות כי המבנים שנשארים בתמונה הם המבנים שהם קווים אופקיים ואנכיים.
+ בהתאם לפילטרים שהעברנו על התמונה.
+ כמו שניתן לראות בתמונת הסכום אנחנו מקבלים את המבנים האנכיים והאופקיים כסכום
+ של שני הפילטרים הקודמים.
+\end_layout
+
+\begin_layout Subsection*
+ה.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pasted1.png
+	lyxscale 10
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+בחרנו במסנן חציון בכדי להוריד את נקודות האי רציפות בתמונה, בעוד שמסנן מיצוע
+ היה נותן לנו רמות אפור לא רצויות.
+\end_layout
+
+\begin_layout Subsection*
+ו.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pasted2.png
+	lyxscale 10
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+ז.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pasted3.png
+	lyxscale 10
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+ח.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pasted4.png
+	lyxscale 10
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+תחילה בודדנו את המקשים על ידי שימוש בפילטרים של קווים הוריזונטליים ואנכיים
+ וסכמנו את שתי התמונות.
+ לאחר מכן ניקינו רעשים על ידי מסנן חציון, אז בודדנו את מסגרות המקשים לאחר
+ מכן השתמשנו בבידוד זה בכדי להתמקד על המקשים ולהתנתק מסביבתם, לבסוך בודדנו
+ את המקשים מהמקלדת.
+\end_layout
+
+\end_body
+\end_document
