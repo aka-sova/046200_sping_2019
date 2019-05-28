@@ -201,16 +201,18 @@ The correspondence is the following:
 Both quality measures $E_b$ and $E_a$ measure the norm of the gradient in an image. First, two major points which help us to solve the question:
 \begin{enumerate}
 \item Blurring - \textit{decreases} the absolute value of the gradient. Thus, it will decrease both the first and second norm of the gradient.
-\item Noise - is a random signal which is added. It has no significant effect on the first norm of the gradient (because gradients of the different directions cancel out), but it increases a lot the second norm of the gradient (since every gradient values are being squared, thus also negative gradients are being summed up)
+\item Noise - is a random signal which is added. which increases both the first (TV) and second norm of the gradient. Second norm is increased more, since the gradient value there is squared.
 \end{enumerate}
 
 Thus, the result is the following:
 \begin{equation*}
 \begin{cases}
-E_{a}(g_{1}) \approx E_{a}(g_{r}) < E_{a}(g_{2}) \approx E_{a}(g_{3})  \\
-E_{b}(g_{1}) < E_{a}(g_{3}) < E_{b}(g_{4}) \approx E_{b}(g_{2}) 
+E_{a}(g_{1}) < E_{a}(g_{3}) \textbf{ ? } E_{a}(g_{4}) < E_{a}(g_{2})  \\
+E_{b}(g_{1}) < E_{b}(g_{3}) \textbf{ ? } E_{b}(g_{4}) < E_{b}(g_{2}) 
 \end{cases}
 \end{equation*}
+
+I have written the '\textbf{?}' mark between images $g_{3}$ and $g_{4}$ in both cases, since we don't have information on the blurring level, and the noise model. Blurring decreases $E_{a}$ and $E_{b}$, but noise increases both of them.
 
 
 
@@ -249,6 +251,8 @@ The correspondence is the following:
 
 
 
+
+\includepdf[pages=-]{046200_q3_4.pdf}
 
 \end{document}
 
