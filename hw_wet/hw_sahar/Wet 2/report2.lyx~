@@ -280,5 +280,200 @@
  את המקשים מהמקלדת.
 \end_layout
 
+\begin_layout Section*
+
+\numeric on
+2
+\numeric off
+.
+ גילוי וחידוד שפות בתמונה רועשת
+\end_layout
+
+\begin_layout Subsection*
+ב.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Q2-2.jpg
+	lyxscale 10
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+האופרטור העדיף מבחינתנו הוא אופרטור 
+\begin_inset Formula $Canny$
+\end_inset
+
+ שכן השפות שהוא תופס הם העיקריות והם גם הכי ברורות.
+\end_layout
+
+\begin_layout Subsection*
+ג.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Q2-3.jpg
+	lyxscale 10
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+הערך שנותן את התוצאה האופטמילית ביותר מבחינתנו הוא 
+\begin_inset Formula $a=2$
+\end_inset
+
+ שכן עבור ערך זה השפות אכן מתחדדות ועבור ערכים גדולים יותר מתקבלת תופעה
+ לא רצויה של 
+\begin_inset Quotes eld
+\end_inset
+
+הילה
+\begin_inset Quotes erd
+\end_inset
+
+ סביב העצמים.
+ הפרמטר 
+\begin_inset Formula $a$
+\end_inset
+
+ הוא סקלר שמכפיל את חוזר אופרטור הנגזרת.
+ מסנן זה מדגיש שפות מכיוון שהוא מבצע הפרשים ממוצעים סביב כל פיקסל כמו אופרטור
+ הנגזרת שלמדנו.
+\end_layout
+
+\begin_layout Subsection*
+ד.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Q2-4.jpg
+	lyxscale 10
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+רעש מלח פלפל הוא רעש בעל תדירות גבוהה, ומכיוון שפילטר זה מחדד שפות הוא גם
+ מגביר את סוג הרעש הזה.
+\end_layout
+
+\begin_layout Subsection*
+ה.
+\end_layout
+
+\begin_layout Standard
+ניתן לעביר תחילה את התמונה במסנן חציון בכדי להפחית את כמות הרעש, ולאחר מכן
+ ולהפעיל את אופרטור הגזירה.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Q2-5.jpg
+	lyxscale 10
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+
+\numeric on
+3
+\numeric off
+.
+ לכידת תמונה
+\end_layout
+
+\begin_layout Subsection*
+א.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Vertical.jpg
+	lyxscale 10
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+ב.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Left to Right.jpg
+	lyxscale 10
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+ג.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Right to left.jpg
+	lyxscale 10
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+מכיוון שבסעיף ב.
+ סרקנו משמאל לימין, בעצם סרקנו בכיוון תנועת הסוס ולכן התמונה נמרחה כאשר
+ היא ניסתה 
+\begin_inset Quotes eld
+\end_inset
+
+לתפוס
+\begin_inset Quotes erd
+\end_inset
+
+ את הסוס.
+ בעוד שעבור סעיף ג כיוון תפיסת התמונה היה בניגוד לתנועת הסוס ולכן הסוס התכווץ
+ בחצי שכן קו תפיסת התמונה חלף עליו במהירות.
+\end_layout
+
 \end_body
 \end_document
