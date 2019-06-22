@@ -62,6 +62,8 @@ max_values = find_max_exact_values(amp_1, threshold);
 
 %% (d) Sampling with different sampling rate
 
+S = 8;
+
 sampling_rate = S+1;
 
 im2 = sample_image(im1, sampling_rate);
@@ -84,6 +86,57 @@ imshow(rescale(amp_2,0,255))
 grid on;
 title('Fourier 2D amplitude');
 
+%% (d) Extension
+
+S = 9;
+
+sampling_rate = S+1;
+
+im2 = sample_image(im1, sampling_rate);
+
+
+% display the image, use the fft transform, find exact points
+
+im2_fft2    = fft2(im2);
+im2_fft2_sh = fftshift(im2_fft2);
+amp_2       = abs(im2_fft2_sh);
+angle_2     = angle(im2_fft2_sh);
+
+
+figure_1_d = figure();
+subplot(1,2,1);
+imshow(im2,[]);
+title('F_1 (\Delta = 10)');
+subplot(1,2,2);
+imshow(rescale(amp_2,0,255))
+grid on;
+title('Fourier 2D amplitude');
+
+%% (d) Extension - 2
+
+S = 3;
+
+sampling_rate = S+1;
+
+im2 = sample_image(im1, sampling_rate);
+
+
+% display the image, use the fft transform, find exact points
+
+im2_fft2    = fft2(im2);
+im2_fft2_sh = fftshift(im2_fft2);
+amp_2       = abs(im2_fft2_sh);
+angle_2     = angle(im2_fft2_sh);
+
+
+figure_1_d = figure();
+subplot(1,2,1);
+imshow(im2,[]);
+title('F_1 (\Delta = 4)');
+subplot(1,2,2);
+imshow(rescale(amp_2,0,255))
+grid on;
+title('Fourier 2D amplitude');
 
 
 %% (e) load a new image of Street from a smartphone
@@ -164,14 +217,6 @@ title('Fourier 2D log amplitude (\Delta = 4)');
 %% (g) perform a gaussian filter on the original image before sampling
 
 
-
-
-
-
-
-
-
-
 filt_kernel  =   fspecial('gaussian',5,3);
 image_3_filt =   imfilter(image_3,filt_kernel,'same');
 
@@ -227,14 +272,3 @@ title('Fourier 2D log amplitude (\Delta = 4)');
 
 
 
-
-
-
-
-
-
-
-
-
-
-%%
