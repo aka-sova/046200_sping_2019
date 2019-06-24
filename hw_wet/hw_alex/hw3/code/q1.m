@@ -6,31 +6,36 @@
 R = 2000;
 S = 8;
 
-syms F1(x,y) x y
 
-
-im1 = zeros(R/10, R/10);
-f_i = [20/R, 50/R, 400/R];
-i_i = [x,y,x+y];
-
-
-F1(x,y) = sin(2*pi*f_i(3)*i_i(2)) + ...
-    sin(2*pi*f_i(2)*i_i(1))+...
-    sin(2*pi*f_i(1)*i_i(3));
-
-fprintf('Creating an image\n');
-
-for row=1:size(im1,1)
-    for col=1:size(im1,2)
-        im1(col,row) = double(F1(row,col));
-    end
+if (exist('im1.mat','file') )
+    load('im1.mat');
+else
     
-    if mod(row,10) == 0
-       fprintf('%2.0f / %2.0f\n', row, size(im1,1));
+    
+    syms F1(x,y) x y
+
+    im1 = zeros(R/10, R/10);
+    f_i = [20/R, 50/R, 400/R];
+    i_i = [x,y,x+y];
+
+
+    F1(x,y) = sin(2*pi*f_i(3)*i_i(2)) + ...
+        sin(2*pi*f_i(2)*i_i(1))+...
+        sin(2*pi*f_i(1)*i_i(3));
+
+    fprintf('Creating an image\n');
+
+    for row=1:size(im1,1)
+        for col=1:size(im1,2)
+            im1(col,row) = double(F1(row,col));
+        end
+
+        if mod(row,10) == 0
+           fprintf('%2.0f / %2.0f\n', row, size(im1,1));
+        end
     end
+
 end
-
-
 fig_1_b = figure();
 imshow(im1,[]);
 title('F_1 (\Delta = 1)');
